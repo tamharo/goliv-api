@@ -31,7 +31,7 @@ def getPlace(zone, search):
 
     resultSearch = []
 
-    for index, r in roads:
+    for r in roads:
         if re.search(reg, r[1]) and len(resultSearch) < 10:
             resultSearch.append(r)
         if len(resultSearch) == 10:
