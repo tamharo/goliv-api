@@ -1,11 +1,11 @@
 # Install or update needed software
-apt-get update
-apt-get install -yq git supervisor python python-pip python3-distutils
-pip install --upgrade pip virtualenv
+sudo apt-get update
+sudo apt-get install -yq git supervisor python python-pip python3-distutils
+sudo pip install --upgrade pip virtualenv
 
 # Fetch source code
 export HOME=/root
-git clone https://github.com/tamharo/goliv-api.git  /opt/app/search
+sudo git clone https://github.com/tamharo/goliv-api.git  /opt/app/search
 
 
 # Account to own server process
