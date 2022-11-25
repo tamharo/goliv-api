@@ -8,7 +8,7 @@ gcloud compute instances create $MY_INSTANCE_NAME \
     --machine-type=e2-medium \
     --scopes userinfo-email,cloud-platform \
     --metadata-from-file startup-script=startup.sh \
-    --zone $ZONE \
+    --zone europe-west1-b \
     --tags http-server
 
 gcloud compute firewall-rules create default-allow-http-8080 \
