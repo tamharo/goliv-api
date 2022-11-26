@@ -1,3 +1,5 @@
+set -ev
+
 # Install or update needed software
 apt-get update
 apt-get install -yq git supervisor python python-pip python3-distutils
