@@ -1,15 +1,17 @@
+set -ex
+
 MY_INSTANCE_NAME="manhamprod"
 ZONE=europe-west1-b
 
 gcloud compute instances create $MY_INSTANCE_NAME \
     --image-family=debian-10 \
     --image-project=debian-cloud \
-    --project=goliv-c7734 \
-    --machine-type=e2-medium \
+    --machine-type=g1-small \
     --scopes userinfo-email,cloud-platform \
-    --metadata-from-file startup-script=startup.sh \
+    --metadata-from-file startup-script=startup-script.sh \
     --zone $ZONE \
     --tags http-server
+# [END getting_started_gce_create_instance]
 
 gcloud compute firewall-rules create default-allow-http-8080 \
     --allow tcp:8080 \
