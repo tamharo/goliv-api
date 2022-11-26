@@ -1,7 +1,7 @@
 set -ex
 
 MY_INSTANCE_NAME="manhamprod"
-ZONE=europe-west1-b
+ZONE=europe-west3-c
 
 gcloud compute instances create $MY_INSTANCE_NAME \
     --image-family=debian-10 \
