@@ -1,11 +1,10 @@
-from flask import Flask,request,jsonify
+from flask import request,jsonify
 import json
 
 
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
-app = Flask(__name__)
 
 
 #get data from uri query and init vehicule count and depot(start point)
@@ -29,7 +28,7 @@ def resp(manager, routing, solution):
     print(output)
     return output
 
-@app.route('/api_sorter', methods=['GET'])
+
 def sorter():
     #get data from Uri query (round)
     data = get_data()
@@ -65,9 +64,3 @@ def sorter():
     # Print solution on console.
     if solution:
         return jsonify(resp(manager, routing, solution))
-
-
-if __name__ == '__main__':
-    app.run()
-
-    #ruqqyk-widfa7-gycDej
