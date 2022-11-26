@@ -1,12 +1,12 @@
 set -ex
 
 MY_INSTANCE_NAME="manhamprod"
-ZONE=us-east1-b
+ZONE=europe-west1-b
 
 gcloud compute instances create $MY_INSTANCE_NAME \
     --image-family=debian-10 \
     --image-project=debian-cloud \
-    --machine-type=c2-standard-8 \
+    --machine-type=e2-highmem-4 \
     --scopes userinfo-email,cloud-platform \
     --metadata-from-file startup-script=startup_script.sh \
     --zone $ZONE \
