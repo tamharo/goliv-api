@@ -7,15 +7,10 @@ from sorter import sorter
 
 import vaex
 
-import time
-
 app = Flask(__name__)
 
-start_time2 = time.time()
 
-print("--- %s seconds before open ---" % (time.time() - start_time2))
 dv = vaex.open(r'db/road.csv.hdf5')
-print("--- %s seconds after open ---" % (time.time() - start_time2))
 
 @app.route('/sorter', methods=['GET'])
 def api_sorter():
