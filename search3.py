@@ -1,8 +1,5 @@
-import csv
 import re
 import vaex
-import pandas as pd
-import numpy as np
 
 import time
 
