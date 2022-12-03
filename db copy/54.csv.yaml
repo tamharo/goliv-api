@@ -1,0 +1,3 @@
+# this file exists so that we know when not to do the
+# db copy/54.csv → db copy/54.csv.hdf5 conversion
+fingerprint: 529ce5c5bd9d6dcef8744d5207d36a41
