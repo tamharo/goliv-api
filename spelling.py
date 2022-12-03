@@ -21,6 +21,9 @@ speelingAbbre = [
     #speeling abbreviation
     [' ST(-| |\.)', ' S(AIN)?T(-| |\.)'],
     [' SAINT(-| |\.)', ' S(AIN)?T(-| |\.)'],
+
+    #other
+    #[" ", ",? "]
     
 ]
 

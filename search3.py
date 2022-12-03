@@ -3,6 +3,7 @@ import vaex
 
 import time
 
+import pandas as pd
 
 from spelling import speelingAbbre
 
@@ -22,13 +23,22 @@ def formatReg(search):
     return formatedReg
 
 
-def getPlace(dv, search):
+def getPlace(zone, dv, search):
     start_time = time.time()
     reg = formatReg(search)
+    print("--- %s seconds after before reg ---" % (time.time() - start_time))
+    val = dv[dv.rue.str.contains(reg, regex=True)]
+    print("--- %s seconds after after reg ---" % (time.time() - start_time))
+    gen = val.to_pandas_df(chunk_size=10)
+
+    count = 0
+    result = []
     
-    val = dv[dv.rue.str.contains(search, regex=True)]
+    for i1, i2, chunk in gen:
+        return chunk.values.tolist()
     
-    return val.rue.tolist()
+    return []
+        
 
 
 
