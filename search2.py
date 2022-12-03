@@ -21,6 +21,6 @@ def formatReg(search):
 def getPlace(zone, search):
     reg = formatReg(search)
     dv = vaex.open(r'db/road.csv.hdf5')
-    val = dv[dv.rue.str.contains(r"^RUE\s[a-zA-Z]*\sFRANCHEPRE", regex=True)]
+    val = dv[dv.rue.str.contains(reg, regex=True)]
     
     return val.rue.tolist()
