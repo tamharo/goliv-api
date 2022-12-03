@@ -1,7 +1,11 @@
 from flask import Flask, request
 
-from search import getPlace
+import json
+
+from search2 import getPlace
 from sorter import sorter
+
+#import time
 
 app = Flask(__name__)
 
@@ -11,9 +15,10 @@ def api_sorter():
 
 @app.route('/search', methods=['GET'])
 def api_search():
+    #start_time = time.time()
     z = request.args['city'] if request.args['city'] != '' else 'road'
     search = getPlace(z, request.args['search'].upper())
-    
+    #print("--- %s seconds ---" % (time.time() - start_time))
     return search
 
 @app.route('/', methods=['GET'])

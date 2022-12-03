@@ -3,6 +3,8 @@ import re
 
 from spelling import speelingAbbre
 
+import time;
+
 
 def formatReg(search):
 
@@ -16,13 +18,12 @@ def formatReg(search):
 
 
 def getPlace(zone, search):
+    start_time = time.time()
     reg = formatReg(search)
 
     # Open CSV file place with all road in France
     file = open('db/' + zone + '.csv')
     roads = csv.reader(file, delimiter=';')
-
-    
 
     resultSearch = []
 
@@ -32,4 +33,7 @@ def getPlace(zone, search):
         if len(resultSearch) == 10:
             break
 
-    return resultSearch
+    print(resultSearch)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    return "resultSearch"
