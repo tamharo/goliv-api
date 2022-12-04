@@ -9,9 +9,6 @@ pip install --upgrade pip virtualenv
 export HOME=/root
 git clone https://github.com/tamharo/goliv-api.git  /opt/app/goliv
 
-# Install Cloud Ops Agent
-sudo bash /opt/app/goliv/add-google-cloud-ops-agent-repo.sh --also-install
-
 # Account to own server process
 useradd -m -d /home/pythonapp pythonapp
 
