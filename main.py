@@ -3,7 +3,7 @@ from flask import Flask, request
 from search3 import getPlace
 from sorter import sorter
 
-import vaex
+
 import time
 
 app = Flask(__name__)
@@ -19,15 +19,11 @@ def api_sorter():
 
 @app.route('/search', methods=['GET'])
 def api_search():
-    start_time = time.time()
-    print("--- %s seconds before call to get place ---" % (time.time() - start_time))
-    search = getPlace(request.args['city'], None, request.args['search'].upper())
-    print("--- %s seconds after call to get place ---" % (time.time() - start_time))
-    return search
+    return ""
 
 @app.route('/', methods=['GET'])
 def say_hello():
-    return "Hello, world!"
+    return "Goliv api v.1.1.0 by Manhamprod"
 
 
 if __name__ == '__main__':
