@@ -8,10 +8,10 @@ import time
 
 app = Flask(__name__)
 
-start_time2 = time.time()
-print("--- %s seconds before load road ---" % (time.time() - start_time2))
-dv = vaex.open(r'db/road.csv.hdf5')
-print("--- %s seconds after load road ---" % (time.time() - start_time2))
+# start_time2 = time.time()
+# print("--- %s seconds before load road ---" % (time.time() - start_time2))
+# dv = vaex.open(r'db/road.csv.hdf5')
+# print("--- %s seconds after load road ---" % (time.time() - start_time2))
 
 @app.route('/sorter', methods=['GET'])
 def api_sorter():
@@ -21,7 +21,7 @@ def api_sorter():
 def api_search():
     start_time = time.time()
     print("--- %s seconds before call to get place ---" % (time.time() - start_time))
-    search = getPlace(request.args['city'], dv, request.args['search'].upper())
+    search = getPlace(request.args['city'], None, request.args['search'].upper())
     print("--- %s seconds after call to get place ---" % (time.time() - start_time))
     return search
 
